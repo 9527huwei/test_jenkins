@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/8/17 ����10:10
-# @Author  : WangJuan
+# @Time    : 2020/11/27 06:40
+# @Author  : hexiangxuan
 # @File    : test_case.py
 import allure
 import pytest
+from locallib.add_tags import add_tag
 
 
 @allure.epic('自动化用例')
@@ -22,11 +23,13 @@ class TestOne:
         author：xiangxuan
         describe: 获取标签数据信息
         """
-        assert 0
+        add_tag('网购达人')
+        assert 0 == 0
 
     @allure.title("新增标签")
     @allure.severity("normal")
     @pytest.mark.normal
+    @allure.issue('https://www.baidu.com', '百度首页')
     def test_case_02(self):
         """
         作者：xiangxuan
